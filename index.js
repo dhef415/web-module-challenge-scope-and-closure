@@ -29,7 +29,7 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   1. What is the difference between counter1 and counter2?
   
-  I think 2 is simplified. shorter code to do the same thing.
+  I think 2 is simplified. shorter code to do the same thing. And it has a global variable.
 
   2. Which of the two uses a closure? How can you tell?
 
@@ -37,7 +37,7 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
 
-     I have no idea.
+     
 
 */
 
@@ -72,6 +72,7 @@ NOTE: This will be a callback function for the tasks below
 function inning(){
     var inn = Math.round(Math.random()*2);
     return inn;
+
 }
 console.log(inning());
 
@@ -100,7 +101,9 @@ function finalScore(numOfInnings){
     away += inning();
     console.log(inning());
   }
+
   return {Home:home, Away:away};
+
 
 
 }
@@ -111,9 +114,21 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore() {
+  let home=0;
+  let away=0;
+  for(let i=0;i<=1;i++){
+    home+=inning();
+    console.log(home);
+  }
+  for(let i=0;i<=1;i++){
+    away+=inning();
+    console.log(away);
+  }
+
+  return {Home:home, Away:away};
 }
+console.log(inning());
 
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
