@@ -29,10 +29,16 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   1. What is the difference between counter1 and counter2?
   
+  I think 2 is simplified. shorter code to do the same thing.
+
   2. Which of the two uses a closure? How can you tell?
+
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+
+     I have no idea.
+
 */
 
 // counter1 code
@@ -42,6 +48,7 @@ function counterMaker() {
    return count++;
   }
 }
+
 
 const counter1 = counterMaker();
 
@@ -62,10 +69,11 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    var inn = Math.round(Math.random()*2);
+    return inn;
 }
-
+console.log(inning());
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
@@ -81,9 +89,22 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*code Here*/){
-  /*Code Here*/
+function finalScore(numOfInnings){
+  let home = 0;
+  let away = 0;
+  for(let i=0;i<numOfInnings;i++){
+    home += inning();
+    console.log(inning());
+  }
+  for(let i=0;i<numOfInnings;i++){
+    away += inning();
+    console.log(inning());
+  }
+  return {Home:home, Away:away};
+
+
 }
+console.log(finalScore(inning(),9));
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
